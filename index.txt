@@ -1,0 +1,5 @@
+-El IVA es del 12% sobre el subtotal de cada venta realizada. 
+-Cualquier opcion que se seleccione en el menu, no cierra el programa.
+-Los codigos de los productos son unicos. 
+-No se aceptan precios ni cantidades negativas.
+-El producto desactivado no se puede vender, pero si se conserva la informacion. 
