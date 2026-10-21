@@ -1,0 +1,85 @@
+REGLAS GENERALES DEL SISTEMA
+
+
+
+\-El IVA es del 12% sobre el subtotal de cada venta realizada. 
+
+\-Cualquier opción que se seleccione en el menú, no cierra el programa.
+
+\-Los códigos de los productos son únicos. 
+
+\-No se aceptan precios ni cantidades negativas.
+
+\-El producto desactivado no se puede vender, pero si se conserva la información. 
+
+
+
+
+
+Modulo 1 - Gestión de Productos
+
+
+
+\#Objetivo: Registrar un producto nuevo con todos sus datos, para que pueda ser vendido y controlar el inventario. 
+
+
+
+\#Descripción del funcionamiento: Al momento de seleccionar en "Registrar producto" en el menú, el programa pide el código y verifica y ya existe o no, luego pide los demás datos, se valida los números, luego agrega el producto a la lista y lo guarda. Si el producto esta en existencias, se registra además un movimiento de Entrada.
+
+
+
+\#Datos de entrada: 
+
+* Código
+* Nombre y categoría 
+* Precio de venta
+* Cantidad disponible
+* Stock mínimo
+
+
+
+\#Procesamiento realizado: 
+
+1. Buscar el código en la lista de productos.
+2. Solicitar nombre, categoría, recio, cantidad y stock mínimo, repitiendo cada numero. 
+3. Crear el producto en estado activo.
+4. Agregarlo a la lista y guardar la lista en el archivo de productos. 
+5. Si la cantidad es mayor que el 0, se registra un movimiento en Entrada con la descripción "Inventario inicial"
+
+
+
+\#Datos de salida: 
+
+* Mensaje "Producto registrado"
+* Una dato nuevo en el registro de productos. 
+* Un movimiento en el registro de movimientos, si hay en existencias iniciales.
+
+
+
+\#Reglas de negocio: 
+
+* Cada código es único y no puede estar vacío. 
+* El precio, cantidad y stock mínimo no pueden ser negativos. 
+* Todo producto nuevo queda activo y disponible para la venta. 
+* Las existencias iniciales cuentan como una entrada de inventario. 
+
+
+
+\#Validaciones y posibles errores: 
+
+* Numero negativo: se muestra "no puede ser negativo" y se vuelve a pedir el dato. 
+* Texto en lugar de números: se muestra "escriba un numero" y se vuelve a pedir el dato correcto.
+* Código vacío o repetido: Se muestra un error y no se puede registrar. 
+
+
+
+
+
+
+
+
+
+
+
+
+
