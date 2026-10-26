@@ -1,22 +1,39 @@
 #Sistema de gestion comercia. 
 
-#solicitar fecha actual
-fecha_hoy = ""
 
-#registra los prodcutos, por nombre, codigo, categoria, precio, cantidad, stock. activo. 
-#activo:  si es 1 si se puede vender, si es 0 no esta activo.
-productos = []
+TASA_IVA = 0.12
 
-#registra cada venta, por numero, fecha, sutotal, iva, total
-ventas = []
+POS_CODIGO = 0
+POS_NOMBRE = 1
+POS_CATEGORIA = 2
+POS_PRECIO = 3
+POS_CANTIDAD = 4
+POS_STOCK_MINIMO = 5
+POS_ACTIVO = 6
 
-#detaslles de las ventas: fecha, codigo, tipo, cantidad, descripcion 
-detalle_ventas = []
 
-#movimientos: fecha, codigo, tipo, cantidad, descripcion
-movimientos = []    
 
-IVA = 0.12
-
-#==============================================================================
-def guardar_movimiento(co   
+def pedir_entero(mensaje):
+    # Pide un numero entero que no sea negativo y lo devuelve
+    numero = -1
+    while numero < 0:
+        try:
+            numero = int(input(mensaje))
+            if numero < 0:
+                print("Error: no puede ser negativo")
+        except ValueError:
+            print("Error: escriba un numero entero")
+    return numero
+ 
+ 
+def pedir_decimal(mensaje):
+    # Pide un numero con decimales que no sea negativo y lo devuelve
+    numero = -1.0
+    while numero < 0:
+        try:
+            numero = float(input(mensaje))
+            if numero < 0:
+                print("Error: no puede ser negativo")
+        except ValueError:
+            print("Error: escriba un numero")
+    return numero
