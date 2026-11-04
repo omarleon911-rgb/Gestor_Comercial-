@@ -205,15 +205,62 @@ Modulo 4 - Reportes y Estadísticas
 
 \#Objetivo:
 
+Mantener correctas las existencias de cada producto cuando entra o sale mercancía, y dejar registro de cada movimiento.
+
+
+
 \#Descripción del funcionamiento:
+
+Las existencias cambian de dos formas: cuando el usuario registra una entrada de inventario (por ejemplo, una compra a proveedor) y cuando se confirma una venta, que es una salida y se describe en el proceso 3. Este proceso detalla la entrada. Después, el menú de inventario permite consultar las existencias, ver los productos que llegaron al stock mínimo y revisar el historial de movimientos.
+
+
 
 \#Datos de entrada:
 
+* Código del producto.
+* Cantidad que entra (entero mayor que 0)
+* Descripción de la entrada (texto).
+
+
+
 \#Procesamiento realizado:
+
+1\. Buscar el código en la lista de productos.
+
+2\. Verificar que la cantidad sea mayor que 0.
+
+3\. Sumar la cantidad a la existencia del producto.
+
+4\. Guardar la lista de productos en el archivo.
+
+5\. Registrar un movimiento de ENTRADA con fecha, código, tipo, cantidad y descripción.
+
+6\. Mostrar la nueva existencia.
+
+
 
 \#Datos de salida:
 
+* Mensaje “Entrada registrada. Nueva cantidad: N”.
+* Archivo de productos con la existencia actualizada.
+* Un movimiento nuevo en el archivo de movimientos.
+
+
+
 \#Reglas de negocio:
 
+* Toda entrada y toda salida deja un movimiento con fecha, código, tipo, cantidad y descripción.
+* Una entrada es de al menos 1 unidad.
+* Un producto está en alerta cuando su existencia es igual o menor que su stock mínimo.
+* La existencia nunca queda negativa, porque una venta no puede superar el inventario.
+
+
+
 \#Validaciones y posibles errores:
+
+* Código inexistente: “El producto no existe” y el proceso termina.
+* Cantidad 0 o negativa: “la cantidad debe ser mayor que 0” y no se registra la entrada.
+* Texto en lugar de número: se muestra el error y se vuelve a pedir la cantidad.
+
+
 
